@@ -66,3 +66,9 @@ All four pages link to each other using relative paths, so they work on GitHub P
 `assets/` — Local background and organza artwork
 
 This is a **ready-to-preview and editable static website prototype**, not a live published URL. Your final project media and contact information can be integrated as you create them. The removed intro can be restored from the previous version if you decide to use it later.
+
+## Readability update — November 2026
+
+The original Vogue-inspired serif font is preserved, but headings, navigation, descriptions, labels and form controls use stronger weights and clearer spacing across all four pages. The runway intro remains removed and the carousel/background art are unchanged.
+
+**To update your existing GitHub Pages site:** Upload the revised `styles.css` and all four revised `.html` files to the root of the existing `danaawu.github.io` repository. Confirm the overwrite/commit if prompted. You do not need to re-upload `assets`, `script.js` or `site-config.js` because they have not changed. Refresh your published website with Ctrl+Shift+R to see the new typography.
