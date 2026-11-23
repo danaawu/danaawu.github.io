@@ -72,3 +72,30 @@ This is a **ready-to-preview and editable static website prototype**, not a live
 The original Vogue-inspired serif font is preserved, but headings, navigation, descriptions, labels and form controls use stronger weights and clearer spacing across all four pages. The runway intro remains removed and the carousel/background art are unchanged.
 
 **To update your existing GitHub Pages site:** Upload the revised `styles.css` and all four revised `.html` files to the root of the existing `danaawu.github.io` repository. Confirm the overwrite/commit if prompted. You do not need to re-upload `assets`, `script.js` or `site-config.js` because they have not changed. Refresh your published website with Ctrl+Shift+R to see the new typography.
+
+
+## Digital Story: add your video, infographic(s), and writing
+
+Open **My Work → Digital Story** or go directly to `work.html#digital-story`. This section has a 16:9 video area, a long-form writing panel, and up to two infographic slots. The second graphic can be hidden if you only use one.
+
+To add your video and infographics to your published GitHub Pages website:
+
+1. Upload your media into the `assets` folder in your GitHub repository (choose **Add file → Upload files** while you are inside `assets`). For a large video, upload it to YouTube and use its public or unlisted URL instead of putting a large MP4 on GitHub.
+2. Edit `site-config.js` (click the file in your repository, then the pencil/Edit icon) and change the relevant values, for example:
+
+```js
+  digitalStoryVideoUrl: "https://youtu.be/YOUR_VIDEO_ID",
+  digitalStoryInfographic1: "assets/infographic-1.png",
+  digitalStoryInfographic2: "assets/infographic-2.png",
+  showSecondInfographic: true
+```
+
+If you have **only one infographic**, set `showSecondInfographic: false` and leave `digitalStoryInfographic2` empty. For a small MP4 video uploaded to `assets`, use `digitalStoryVideoUrl: "assets/digital-story.mp4"`.
+
+For text and captions, open **My Work → Digital Story**, click **EDIT TEXT**, change the paragraphs, click **FINISH EDITING**, and then click **SAVE PAGE FILE**. This downloads a revised `work.html`; upload it to your repository to publish your edits. Edits visible only in your browser are **not** published until you upload that saved page.
+
+All editable media settings are in `site-config.js`. For visitors, empty media areas simply show tasteful placeholders until you add your content.
+
+## Typography update
+
+The site now uses Playfair Display in stronger weights for large editorial type and Lora for readable descriptive copy, rather than Bodoni Moda's extremely thin letter strokes. If a browser shows the old font after publishing, refresh with **Ctrl + Shift + R** to clear its cached stylesheet.

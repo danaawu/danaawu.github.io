@@ -126,6 +126,59 @@
       window.scrollTo({top:0,behavior:'instant'});
     }
     window.addEventListener('hashchange',changeWorkRoute);changeWorkRoute();
+
+    // Optional media URLs are configured in site-config.js; no upload forms are
+    // exposed to visitors. Empty URLs leave clear, presentable placeholders.
+    const frame=document.getElementById('story-video-frame');
+    const videoPlaceholder=document.getElementById('story-video-placeholder');
+    const videoUrl=String(config.digitalStoryVideoUrl||'').trim();
+    function youtubeId(input) {
+      try {
+        const url=new URL(input,window.location.href);
+        const host=url.hostname.toLowerCase();
+        if(host==='youtu.be'||host==='www.youtu.be') return url.pathname.split('/')[1]||'';
+        if(['youtube.com','www.youtube.com','m.youtube.com','www.youtube-nocookie.com'].includes(host)) {
+          return url.searchParams.get('v')||(url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)/)||[])[1]||'';
+        }
+      } catch(_) {}
+      return '';
+    }
+    if(frame&&videoUrl) {
+      const id=youtubeId(videoUrl);
+      const safeId=/^[A-Za-z0-9_-]{11}$/.test(id)?id:null;
+      if(safeId) {
+        const iframe=document.createElement('iframe');
+        iframe.src=`https://www.youtube-nocookie.com/embed/${safeId}`;
+        iframe.title='Digital story video'; iframe.loading='lazy';
+        iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.setAttribute('allowfullscreen','');
+        frame.appendChild(iframe);
+        videoPlaceholder.hidden=true;
+      }else if(!/^javascript:/i.test(videoUrl)){
+        const video=document.createElement('video');
+        video.controls=true;video.playsInline=true;video.preload='metadata';
+        video.poster='assets/organza-placeholder.webp';
+        video.src=videoUrl;
+        video.addEventListener('loadedmetadata',()=>{videoPlaceholder.hidden=true;});
+        video.addEventListener('error',()=>{video.remove();videoPlaceholder.hidden=false;});
+        frame.appendChild(video);
+      }
+    }
+    [1,2].forEach(index=>{
+      const card=document.getElementById(`story-infographic-${index}`);
+      if(!card)return;
+      if(index===2&&config.showSecondInfographic===false){card.hidden=true;return;}
+      const asset=String(config[`digitalStoryInfographic${index}`]||'').trim();
+      if(!asset||/^javascript:/i.test(asset))return;
+      const stage=card.querySelector('.story-infographic-image');
+      const img=document.createElement('img');
+      img.alt=`Digital story infographic ${index}`;
+      img.loading='lazy';
+      img.addEventListener('load',()=>{stage.querySelector('.story-infographic-placeholder').hidden=true;});
+      img.addEventListener('error',()=>{img.remove();});
+      stage.appendChild(img);img.src=asset;
+    });
+    if(config.showSecondInfographic===false)document.getElementById('story-infographic-grid')?.classList.add('is-single');
   }
   if(page === 'about') {
     const photoUpload=document.getElementById('about-photo-input');
