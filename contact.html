@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#c89e98">
+<meta name="description" content="Get in touch with Dana Wu for stories, collaborations and creative projects.">
+<title>Contact · Dana Wu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site-config.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body data-page="contact" class="site-page">
+
+<header class="site-header">
+  <a class="site-logo" href="index.html" aria-label="Dana Wu, home">DANA WU</a>
+  <button class="mobile-menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">MENU <span aria-hidden="true">☰</span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <a href="index.html" data-nav="home">HOME</a>
+    <a href="about.html" data-nav="about">ABOUT</a>
+    <span class="nav-work"><a href="work.html" data-nav="work">WORK</a><button class="work-dropdown-toggle" type="button" aria-expanded="false" aria-label="Show work categories">⌄</button>
+      <span class="work-dropdown" role="group" aria-label="Work categories">
+        <a href="work.html#photography">Photography</a>
+        <a href="work.html#advertising-creative">Advertising Creative</a>
+        <a href="work.html#writing">Writing</a>
+        <a href="work.html#digital-story">Digital Story</a>
+        <a href="work.html#inspirations">Inspiration(s)</a>
+      </span>
+    </span>
+    <a href="contact.html" data-nav="contact">CONTACT</a>
+  </nav>
+</header>
+
+<main id="main-content" class="editorial-main contact-main">
+  <section class="contact-layout" aria-labelledby="contact-heading">
+    <div class="contact-copy">
+      <h1 id="contact-heading" class="contact-title">LET’S<br>CONNECT</h1>
+      <div class="ornate-divider"><span aria-hidden="true">✦</span></div>
+      <p class="contact-subtitle" data-edit-id="contact-intro">I’D LOVE TO HEAR FROM YOU.</p>
+      <a class="linkedin-link" id="linkedin-link" href="#" aria-label="Visit Dana Wu on LinkedIn"><span class="linkedin-mark">in</span><span class="linkedin-label">LINKEDIN</span><span class="linkedin-arrow" aria-hidden="true">⟶</span></a>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <label for="contact-name">NAME</label><input name="name" id="contact-name" placeholder="NAME" autocomplete="name" required>
+      <label for="contact-email">EMAIL</label><input name="email" id="contact-email" type="email" placeholder="EMAIL" autocomplete="email" required>
+      <label for="contact-message">MESSAGE</label><textarea name="message" id="contact-message" placeholder="MESSAGE" required></textarea>
+      <button class="send-button" type="submit">SEND MESSAGE <span aria-hidden="true">⟶</span></button>
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer class="site-footer"><span>© <span data-current-year></span> DANA WU</span><span class="footer-star" aria-hidden="true">✦</span><span>CREATED WITH INTENTION</span></footer>
+
+<div class="editor-bar" id="editor-bar" aria-label="Page editing controls">
+  <button type="button" id="edit-text-toggle" aria-pressed="false" title="Edit the words on this page">✎ EDIT TEXT</button>
+  <button type="button" id="export-page-button" title="Download an HTML copy of this page with your changes">↓ SAVE PAGE FILE</button>
+</div>
+<div id="editor-notice" class="editor-notice" role="status" hidden></div>
+</body></html>

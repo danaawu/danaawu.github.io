@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#c89e98">
+<meta name="description" content="About Dana Wu — the stories, people and causes behind her work.">
+<title>About Me · Dana Wu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site-config.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body data-page="about" class="site-page">
+
+<header class="site-header">
+  <a class="site-logo" href="index.html" aria-label="Dana Wu, home">DANA WU</a>
+  <button class="mobile-menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">MENU <span aria-hidden="true">☰</span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <a href="index.html" data-nav="home">HOME</a>
+    <a href="about.html" data-nav="about">ABOUT</a>
+    <span class="nav-work"><a href="work.html" data-nav="work">WORK</a><button class="work-dropdown-toggle" type="button" aria-expanded="false" aria-label="Show work categories">⌄</button>
+      <span class="work-dropdown" role="group" aria-label="Work categories">
+        <a href="work.html#photography">Photography</a>
+        <a href="work.html#advertising-creative">Advertising Creative</a>
+        <a href="work.html#writing">Writing</a>
+        <a href="work.html#digital-story">Digital Story</a>
+        <a href="work.html#inspirations">Inspiration(s)</a>
+      </span>
+    </span>
+    <a href="contact.html" data-nav="contact">CONTACT</a>
+  </nav>
+</header>
+
+<main id="main-content" class="about-main editorial-main">
+  <section class="about-shell" aria-labelledby="about-heading">
+    <div class="about-image-column">
+      <div class="about-polaroid">
+        <div class="about-photo-holder" id="about-photo-holder">
+          <img class="about-photo" id="about-photo" src="assets/about-photo.jpg" alt="A portrait of Dana" onerror="this.style.display='none'">
+          <label class="image-upload-trigger" for="about-photo-input">ADD YOUR PHOTO</label>
+          <input type="file" accept="image/*" id="about-photo-input" class="visually-hidden">
+        </div>
+        <span class="about-photo-signature">Dana Wu <span aria-hidden="true">♡</span></span>
+      </div>
+      <small class="image-hint">Photo preview stays in this browser until you publish your own image file.</small>
+    </div>
+    <div class="about-text-column">
+      <h1 class="inside-title italic-title" id="about-heading">About Me</h1>
+      <div class="ornate-divider"><span aria-hidden="true">✦</span></div>
+      <p class="about-lead" data-edit-id="about-intro">I’m Dana, a storyteller, journalist and creative who is passionate about documenting the lives of others and the issues that matter most. I’m drawn to stories of people, places and communities—especially those that inspire change, bring hope and deserve to be heard.</p>
+      <div class="interests-heading"><span>INTERESTS</span></div>
+      <div class="interests-grid">
+        <div class="interest"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 16h10l4-5h9l4 5h7v23H7z"/><circle cx="24" cy="27" r="8"/></svg><span>STORYTELLING</span></div>
+        <div class="interest"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h28v32H10zM17 15h14M17 20h14M17 26h7M17 32h14"/></svg><span>JOURNALISM</span></div>
+        <div class="interest"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 20l22-8v24L7 28zM29 17l9-6v26l-9-6M10 30l5 10h9l-6-13"/></svg><span>ADVERTISING</span></div>
+        <div class="interest"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M42 7L26 24l8 17-7-5-9-5-12 8 8-12-5-9-5-7 17 8z"/></svg><span>TRAVEL</span></div>
+        <div class="interest"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 29c-6 8 2 13 9 9 2-1 4-1 6 0 9 5 15-2 9-9-4-6-6-9-12-9S17 23 13 29z"/><ellipse cx="10" cy="19" rx="4" ry="6"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="31" cy="11" rx="4" ry="6"/><ellipse cx="41" cy="19" rx="4" ry="6"/></svg><span>ANIMALS</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><span>© <span data-current-year></span> DANA WU</span><span class="footer-star" aria-hidden="true">✦</span><span>CREATED WITH INTENTION</span></footer>
+
+<div class="editor-bar" id="editor-bar" aria-label="Page editing controls">
+  <button type="button" id="edit-text-toggle" aria-pressed="false" title="Edit the words on this page">✎ EDIT TEXT</button>
+  <button type="button" id="export-page-button" title="Download an HTML copy of this page with your changes">↓ SAVE PAGE FILE</button>
+</div>
+<div id="editor-notice" class="editor-notice" role="status" hidden></div>
+</body></html>
